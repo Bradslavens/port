@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +23,34 @@ Route::get('/', function () {
 |
 */
 
+use Illuminate\Http\Request;
+
+
+
 Route::group(['middleware' => ['web']], function () {
     //
+	Route::get('/', function () {
+	    return view('welcome');
+	});
+
+	Route::post('/', function (Request $request) {
+
+	    $validator = Validator::make($request->all(), [
+	        'full_name' => 'required|max:255',
+	        'email' => 'required'
+	    ]);
+
+	    if ($validator->fails()) {
+	        return redirect('/')
+	            ->withInput()
+	            ->withErrors($validator);
+	    }
+
+
+	    // email new task
+	    echo $request->full_name;
+	    exit();
+
+	    return redirect('/');
+	});
 });
