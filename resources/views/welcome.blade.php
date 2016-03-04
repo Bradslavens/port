@@ -175,41 +175,7 @@
 
     <section id="get_quote" class="container">
         <div class="content">
-
-                <!-- Display Validation Errors -->
-                @include('common.errors')
-
-            <form action="{{ url('/') }}" method="POST" class="form-horizontal">
-                {!! csrf_field() !!}
-
-                <!-- full name Name -->
-                <div class="form-group">
-                    <label for="full_name" class="col-sm-3 control-label">Full Name</label>
-
-                    <div class="col-sm-6">
-                        <input type="text" name="full_name" id="full_name" class="form-control">
-                    </div>
-                </div>
-
-                <!-- email -->
-                <div class="form-group">
-                    <label for="email" class="col-sm-3 control-label">Email</label>
-
-                    <div class="col-sm-6">
-                        <input type="email" name="email" id="email" class="form-control">
-                    </div>
-                </div>
-
-
-                <!-- Add request quote Button -->
-                <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-6">
-                        <button type="submit" class="btn btn-default">
-                            <i class="fa fa-plus"></i> Request Quote
-                        </button>
-                    </div>
-                </div>
-            </form>
+            Call 619-253-0529 for a quote
         </div>
     </section> <!-- get_quote -->
     <span id="reload_form"></span>
